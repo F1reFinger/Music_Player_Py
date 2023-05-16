@@ -1,11 +1,15 @@
 #importing libraries 
-import os
+import os 
 import pygame
 import tkinter
 import tkinter.font as font
 from tkinter import ACTIVE, END, SINGLE, Button, Listbox, Menu, Tk, filedialog, mainloop
 from pygame import mixer
+from tkinter import filedialog
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+song='This song'
 
 #add many songs to the playlist
 def addsongs():
