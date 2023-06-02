@@ -1,0 +1,5 @@
+play = Image.open("play.png")
+
+play_button=Button(root,image=play,command=Play)
+play_button['font']=defined_font
+play_button.grid(row=1,column=0)

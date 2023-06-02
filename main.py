@@ -1,7 +1,11 @@
 #importing libraries 
 import os 
 import pygame
-import tkinter
+import tkinter as tk
+from tkinter import Tk, Button
+from PIL import Image, ImageTk
+from PIL import Image
+from PIL import *
 import tkinter.font as font
 from tkinter import ACTIVE, END, SINGLE, Button, Listbox, Menu, Tk, filedialog, mainloop
 from pygame import mixer
@@ -85,9 +89,19 @@ def Next():
 
 #creating the root window 
 root=Tk()
-root.title('DataFlair Music player App ')
+root.title('Custom Music player')
 #initialize mixer 
 mixer.init()
+
+#NewPlay = play.resize((50,50))
+#cringe = ImageTk.PhotoImage(file='play.png')
+#play = cringe.resize(50,50)
+# Open the image file using PIL/Pillow
+play_image = Image.open("play.png")
+
+# Convert the image to a Tkinter-compatible format
+play_photo = ImageTk.PhotoImage(play_image)
+#play = image.resize((50,50), Image.ANTIALIAS)
 
 #create the listbox to contain songs
 songs_list=Listbox(root,selectmode=SINGLE,bg="black",fg="white",font=('arial',15),height=12,width=47,selectbackground="gray",selectforeground="black")
@@ -97,8 +111,9 @@ songs_list.grid(columnspan=9)
 defined_font = font.Font(family='Helvetica')
 
 #play button
-play_button=Button(root,text="Play",width =7,command=Play)
+play_button=Button(root, image=play_photo, command=Play)
 play_button['font']=defined_font
+play_button.configure(width=50, height=50)
 play_button.grid(row=1,column=0)
 
 #pause button 
