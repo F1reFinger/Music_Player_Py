@@ -100,8 +100,11 @@ mixer.init()
 play_image = Image.open("play.png")
 
 # Convert the image to a Tkinter-compatible format
-play_photo = ImageTk.PhotoImage(play_image)
-#play = image.resize((50,50), Image.ANTIALIAS)
+# Resize the image to fit the button
+resized_image = play_image.resize((50, 50), Image.ANTIALIAS)
+
+# Convert the resized image to a Tkinter-compatible format
+play_photo = ImageTk.PhotoImage(resized_image)
 
 #create the listbox to contain songs
 songs_list=Listbox(root,selectmode=SINGLE,bg="black",fg="white",font=('arial',15),height=12,width=47,selectbackground="gray",selectforeground="black")
